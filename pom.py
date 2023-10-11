@@ -1,9 +1,15 @@
 import time
 
+BOLD = "\033[1m"
+GREEN = "\033[32m"
+RESET = "\033[0m"
+
 def pomodoro_timer(duration):
     print("Pomodoro Timer Started")
     for i in range(duration, 0, -1):
-        print(f"Time remaining: {i} seconds", end='\r')
+        minutes = i // 60
+        seconds = i % 60
+        print(f"Time remaining: {BOLD}{GREEN} {minutes}:{seconds} minutes{RESET}", end='\r')
         time.sleep(1)
     print("Pomodoro Timer Completed")
 
