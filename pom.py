@@ -9,7 +9,7 @@ def pomodoro_timer(duration):
     for i in range(duration, 0, -1):
         minutes = i // 60
         seconds = i % 60
-        print(f"Time remaining: {BOLD}{GREEN} {minutes}:{seconds} minutes{RESET}", end='\r')
+        print(f"Time remaining: {BOLD}{GREEN} {minutes:02d}:{seconds:02d} minutes{RESET}", end='\r')
         time.sleep(1)
     print("Pomodoro Timer Completed")
 
