@@ -3,7 +3,7 @@ import time
 def pomodoro_timer(duration):
     print("Pomodoro Timer Started")
     for i in range(duration, 0, -1):
-        print(f"Time remaining: {i} seconds")
+        print(f"Time remaining: {i} seconds", end='\r')
         time.sleep(1)
     print("Pomodoro Timer Completed")
 
