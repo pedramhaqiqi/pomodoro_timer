@@ -1,8 +1,14 @@
 import time
+import signal
 
 BOLD = "\033[1m"
 GREEN = "\033[32m"
 RESET = "\033[0m"
+
+def signal_handler(signal, frame):
+    print("\n")
+    print("Have a good day!")
+    exit(0)
 
 def pomodoro_timer(duration):
     print("Pomodoro Timer Started")
@@ -31,4 +37,5 @@ def main():
             print("Invalid input. Please try again.")
 
 if __name__ == "__main__":
+    signal.signal(signal.SIGINT, signal_handler)
     main()
